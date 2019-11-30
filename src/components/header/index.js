@@ -2,7 +2,7 @@ import React from 'react';
 import { logo } from './style.js';
 import logoImg from '../../assets/images/logo.png';
 
-const header = () => {
+const Header = () => {
     return(
         <div>
             <img src={logoImg} alt="" style={logo}/>
@@ -10,4 +10,4 @@ const header = () => {
     )
 }
 
-export default header;
+export default Header;

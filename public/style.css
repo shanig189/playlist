@@ -6,22 +6,15 @@ html {
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
-.titleCtn{
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-/* .titleCtn::after{
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -72px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: #e830fe;
-    content: 'live';
-    line-height: 95px;
-} */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+  }

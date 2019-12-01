@@ -1,13 +1,13 @@
 import React from 'react';
-import Search from '../search';
+import AddTracks from '../addTracks';
 import Filter from '../filter';
 
 const Tracks = () => {
     return(
         <div>
-            <Search />
+            <AddTracks />
             <div style={{marginTop: '5%'}}> 
-            {/* //IF TRACKS NOT EMPTY */}
+            {/* //IF TRACKS MORE THAN 2 */}
                 <Filter /> 
             </div>
         </div>

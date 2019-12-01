@@ -8,7 +8,7 @@ html {
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
-    opacity: 1; /* Firefox */
+    opacity: 0.4; /* Firefox */
 }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -29,4 +29,8 @@ html {
 
 .filterOption:hover{
     color: #2e9e7a;
+}
+
+.addTrackInput{
+    border-color: red !important;
 }

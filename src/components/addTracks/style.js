@@ -1,4 +1,4 @@
-export const searchCtn = {
+export const addTrackCtn = {
     textAlign: 'center',
     margin: '1% auto'
 }
@@ -15,7 +15,7 @@ const button = {
     marginRight: '1%'
 }
 
-export const searchInput = {
+export const addTrackInput = {
     ...button,
     padding: '0 2%',
     position: 'relative',
@@ -23,10 +23,10 @@ export const searchInput = {
     background: 'rgba(255,255,255,0.14)',
     cursor: 'pointer',
     width: '18%',
-    height: '48px'
+    height: '48px',
 }
 
-export const getTracksBtn = {
+export const addTrackBtn = {
     ...button,
     width: '14%',
     textTransform: 'uppercase',

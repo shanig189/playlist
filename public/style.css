@@ -26,3 +26,7 @@ html {
     right: 10%;
     top: 26%;
 }
+
+.filterOption:hover{
+    color: #2e9e7a;
+}

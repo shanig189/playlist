@@ -6,7 +6,10 @@ const Tracks = () => {
     return(
         <div>
             <Search />
-            <Filter />
+            <div style={{marginTop: '5%'}}> 
+            {/* //IF TRACKS NOT EMPTY */}
+                <Filter /> 
+            </div>
         </div>
     )
 }

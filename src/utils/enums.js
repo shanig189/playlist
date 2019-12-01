@@ -1,3 +1,3 @@
 export const MAX_NUM_OF_TRACKS = 19;
 
-export const filterOptionsArr = ['All', 'TrackName', 'AlbumName', 'ArtistName', 'TrackLength'];
+export const filterOptions = ['All', 'Track name', 'Album name', 'Artist name', 'Track length'];

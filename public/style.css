@@ -6,16 +6,16 @@ html {
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
     color: white;
-    opacity: 0.4; /* Firefox */
+    opacity: 0.4; 
 }
   
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  :-ms-input-placeholder { 
     color: white;
 }
   
-  ::-ms-input-placeholder { /* Microsoft Edge */
+  ::-ms-input-placeholder { 
     color: white;
 }
 

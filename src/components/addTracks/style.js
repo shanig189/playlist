@@ -28,7 +28,7 @@ export const addTrackInput = {
 
 export const addTrackBtn = {
     ...button,
-    width: '14%',
+    width: '15%',
     textTransform: 'uppercase',
     background: 'linear-gradient(to right, #2ac275, #cbdc0b, #2ac275)'
 }

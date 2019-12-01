@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import { addTrackCtn, addTrackInput, addTrackBtn } from './style.js';
+import Actions from '../../helpers/tracksActions';
 
 const AddTracks = () => {
+    const { addTrack } = Actions();
     const [trackName, setTrackName] = useState('');
     const [artistName, setArtistName] = useState('');
     const [isTrackNameEmptyOnAddTrackClick, setIsTrackNameEmptyOnAddTrackClick] = useState(false);
@@ -15,9 +17,10 @@ const AddTracks = () => {
         if(!trackName){
             setIsTrackNameEmptyOnAddTrackClick(true);
         }else if(!artistName){
-            // send both to addTrack
+            addTrack();
+            // send only track name
         }else{
-            // addTrack only track name
+            // send both
         }
     }
 
@@ -31,7 +34,7 @@ const AddTracks = () => {
             />
             <input style={addTrackInput} 
                    type='text' 
-                   placeholder='Artist name' 
+                   placeholder='Artist name (optional)' 
                    onChange={event => setArtistName(event.target.value)} 
             />
             <button style={addTrackBtn} onClick={handleAddTrackClick}>

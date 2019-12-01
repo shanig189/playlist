@@ -5,11 +5,10 @@ const Actions = () => {
     const [tracks, setTracks] = useGlobalState('tracks');
     return { 
         addTrack: () => {
-            console.log(tracks);
+            const tracks1 =  [...tracks, "2"]
+            setTracks(tracks1);
         }
     }
 }
-
-
 
 export default Actions;

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useGlobalState } from '../../store/useGlobalState';
 import AddTracks from '../addTracks';
 import Filter from '../filter';
 
 const Tracks = () => {
+    const [tracks, setTracks] = useGlobalState('tracks');
+    console.log("tracks", tracks)
     return(
         <div>
             <AddTracks />

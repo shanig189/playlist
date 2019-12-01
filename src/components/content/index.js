@@ -1,12 +1,12 @@
 import React from 'react';
 import Title from '../title';
-import Playlist from '../playlist';
+import Tracks from '../tracks';
 
 const Content = () => {
     return(
         <div>
             <Title />
-            <Playlist />
+            <Tracks />
         </div>
     )
 }

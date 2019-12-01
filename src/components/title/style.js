@@ -8,7 +8,7 @@ export const titleCtn = {
 
 export const title = {
     margin: '1%',
-    marginLeft: '28%',
+    marginLeft: '30%',
     fontSize: '5vw',
     fontWeight: '500',
     color: 'white',

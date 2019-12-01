@@ -1,4 +1,4 @@
 export const logo = {
-    margin: '1% 3%',
+    margin: '2% 3% 0 4%',
     width: '16%'
 }

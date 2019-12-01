@@ -1,4 +1,4 @@
-export const searchAndFilterCtn = {
+export const searchCtn = {
     textAlign: 'center',
     margin: '1% auto'
 }
@@ -15,27 +15,18 @@ const button = {
     marginRight: '1%'
 }
 
-const searchAndFilterBtns = {
+export const searchInput = {
     ...button,
     padding: '0 2%',
     position: 'relative',
     border: 'solid 2px #ffffff',
     background: 'rgba(255,255,255,0.14)',
     cursor: 'pointer',
-}
-
-export const searchBtn = {
-    ...searchAndFilterBtns,
     width: '18%',
     height: '48px'
 }
 
-export const filterBtn = {
-    ...searchAndFilterBtns,
-    width: '20%',
-}
-
-export const playlistBtn = {
+export const getTracksBtn = {
     ...button,
     width: '14%',
     textTransform: 'uppercase',

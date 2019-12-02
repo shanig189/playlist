@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import { container } from './style';
 import Header from '../components/header';
 import Content from '../components/content';
-import { GlobalStateProvider } from '../store/useGlobalState';
+import { GlobalStateProvider } from '../state/useGlobalState';
  
 const App = () => {
     return(

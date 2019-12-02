@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalState } from '../../store/useGlobalState';
+import { useGlobalState } from '../../state/useGlobalState';
 import AddTracks from '../addTracks';
 import Filter from '../filter';
 

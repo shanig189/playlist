@@ -8,24 +8,16 @@ const options = {
     }
 }
 
-const getTracks = async (params) => {
+export const getTracks = async (trackName, artistName) => {
+    let params = `track.search?q_track=${trackName}`;
+
+    if(artistName){
+        params += `&q_artist=${artistName}`;
+    }
+
     const response = await fetch(`${proxyUrl}${url}${params}&apikey=${key}`, options);
-    let data = await response.json();
+    const data = await response.json();
     const { track_list } = data.message.body;
+
     return track_list;
-}
-
-export const getTracksByTrackName = async (tracktName) => {
-    const params = `track.search?q_track=${tracktName}`;
-    return await getTracks(params);
-}
-
-export const getTracksByArtistName = async (artistName) => {
-    const params = `track.search?q_artist=${artistName}`;
-    return await getTracks(params);
-}
-
-export const getTracksByTrackNameAndArtistName = async (tracktName, artistName) => {
-    const params = `track.search?q_track=${tracktName}&q_artist=${artistName}`;
-    return await getTracks(params);
 }

@@ -16,11 +16,8 @@ const AddTracks = () => {
     const handleAddTrackClick = () => {
         if(!trackName){
             setIsTrackNameEmptyOnAddTrackClick(true);
-        }else if(!artistName){
-            addTrack();
-            // send only track name
         }else{
-            // send both
+            addTrack(trackName, artistName);
         }
     }
 

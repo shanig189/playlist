@@ -1,5 +1,5 @@
 import React from 'react';
-import trackImg from '../../assets/images/trackImg.jpg';
+import trackImg from '../../assets/images/trackImg.gif';
 import { trackCtn, trackImage, trackDetails } from './style';
 
 const Track = ({ trackData }) => {

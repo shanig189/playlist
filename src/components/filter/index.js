@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { filterCtn, filterTitle, filterBtn, filterDefaultOption, filterOptionsCtn, filterOption } from './style.js';
 import { filterOptions } from '../../utils/enums';
+import Actions from '../../helpers/tracksActions';
 
 const Filter = () => {
-    const [currentFilterOption, setCurrentFilterOption] = useState('All');
+    const [currentFilterOption, setCurrentFilterOption] = useState('filter by');
     const [isFilterOptionsBoxOpen, setIsFilterOptionsBoxOpen] = useState(false);
+    const { sortTracks } = Actions();    
 
     const toggleFilterOptionsBox = () => {
         setIsFilterOptionsBoxOpen(!isFilterOptionsBoxOpen);
@@ -13,6 +15,7 @@ const Filter = () => {
     const handletCurrentFilterOptionChanged = (option) => {
         setCurrentFilterOption(option);
         toggleFilterOptionsBox();
+        sortTracks(option);
     }
 
     const getFilterOptions = filterOptions.map((option, index) =>
@@ -27,7 +30,6 @@ const Filter = () => {
 
     return(
         <div style={filterCtn}>
-            <span style={filterTitle}>Filter By:</span>
             <div style={filterBtn} className='filterBtn' onClick={toggleFilterOptionsBox}>
                 <span style={filterDefaultOption}>{currentFilterOption}</span>
             </div>

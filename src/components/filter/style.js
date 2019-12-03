@@ -4,6 +4,7 @@ export const filterCtn = {
 }
 
 const filter = {
+    position: 'absolute',
     borderRadius: '18px',
     width: '7%',
 }

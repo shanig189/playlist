@@ -3,10 +3,10 @@ import { addTrackCtn, addTrackInput, addTrackBtn } from './style.js';
 import Actions from '../../helpers/tracksActions';
 
 const AddTracks = () => {
-    const { addTrack } = Actions();
     const [trackName, setTrackName] = useState('');
     const [artistName, setArtistName] = useState('');
     const [isTrackNameEmptyOnAddTrackClick, setIsTrackNameEmptyOnAddTrackClick] = useState(false);
+    const { addTrack } = Actions();
 
     const handleSetTrackName = (event) => {
         setTrackName(event.target.value);

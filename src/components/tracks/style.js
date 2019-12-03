@@ -5,4 +5,5 @@ export const tracksListCtn = {
     width: '75%',
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginBottom: '5%'
 }

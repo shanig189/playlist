@@ -1,17 +1,32 @@
 import { useGlobalState } from '../state/useGlobalState';
-import MAX_NUM_OF_TRACKS from '../utils/enums';
+import { MAX_NUM_OF_TRACKS } from '../utils/enums';
 import { getTracks } from './tracksApi';
 import compare from './compare';
 
 const Actions = () => {
     const [tracks, setTracks] = useGlobalState('tracks');
+    const [isShowModal, setIsShowModal] = useGlobalState('isShowModal');
+    const [sortOption, setSortOption] = useGlobalState('sortOption');
     let originTracks = localStorage.getItem('tracks') ? JSON.parse(localStorage.getItem('tracks')) : [];
+    let updatedTracks = originTracks;
+    let trackToAddAfterDelete = {};
+
+    const sortTracksByOption = (sortOption) => {
+        const cloneTracks = updatedTracks.slice();
+    
+        switch(sortOption){
+            case 'Track name': cloneTracks.sort(compare.bind(null, 'trackName')); break;
+            case 'Artist name': cloneTracks.sort(compare.bind(null, 'artistName')); break;
+            default: break;
+        }
+
+        setTracks(cloneTracks);
+    }
 
     return { 
         addTrack: async (trackName, artistName) => {
             const tracksList = await getTracks(trackName, artistName);
             const randomTrack = tracksList[Math.floor(Math.random()*tracksList.length)];
-            console.log(randomTrack)
             const { track_id, track_name, artist_name, album_name } = randomTrack.track;
             const track = {
                 trackId: track_id,
@@ -19,25 +34,30 @@ const Actions = () => {
                 artistName: artist_name,
                 albumName: album_name
             }
-            const updatedTracks = originTracks = [...tracks, track];
-            localStorage.setItem('tracks', JSON.stringify(updatedTracks));
-            //MAX_NUM_OF_TRACKS
-            setTracks(updatedTracks);
-
-        },
-        deleteTrack: (trackId) => {
-            // const updatedTracks = tracks
-        },
-        sortTracks: (sortOption) => {
-            const cloneTracks = originTracks.slice();
-
-            switch(sortOption){
-                case 'Track name': cloneTracks.sort(compare.bind(null, 'trackName')); break;
-                case 'Artist name': cloneTracks.sort(compare.bind(null, 'artistName')); break;
-                default:  break;
+            if(updatedTracks.length === MAX_NUM_OF_TRACKS){
+                console.log("MAX_NUM_OF_TRACKS",MAX_NUM_OF_TRACKS)
+                trackToAddAfterDelete = track;
+                setIsShowModal(true);
+            }else{
+                updatedTracks = originTracks = [...tracks, track];
+                localStorage.setItem('tracks', JSON.stringify(updatedTracks));
+                setTracks(updatedTracks);
             }
 
-            setTracks(cloneTracks);
+        },
+        deleteTrack: () => {
+            updatedTracks.shift();
+            updatedTracks.push(trackToAddAfterDelete);
+            localStorage.setItem('tracks', JSON.stringify(updatedTracks));
+            
+            if(sortOption !== 'Default'){
+                sortTracksByOption(sortOption);
+            }else{
+                setTracks(updatedTracks);
+            }
+        },
+        sortTracks: (sortOption) => {
+            sortTracksByOption(sortOption);
         }
     }
 }

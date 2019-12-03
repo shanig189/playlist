@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useGlobalState } from '../../state/useGlobalState';
 import { filterCtn, filterTitle, filterBtn, filterDefaultOption, filterOptionsCtn, filterOption } from './style.js';
 import { filterOptions } from '../../utils/enums';
 import Actions from '../../helpers/tracksActions';
 
 const Filter = () => {
+    const [sortOption, setSortOption] = useGlobalState('sortOption');
     const [currentFilterOption, setCurrentFilterOption] = useState('filter by');
     const [isFilterOptionsBoxOpen, setIsFilterOptionsBoxOpen] = useState(false);
     const { sortTracks } = Actions();    
@@ -15,6 +17,7 @@ const Filter = () => {
     const handletCurrentFilterOptionChanged = (option) => {
         setCurrentFilterOption(option);
         toggleFilterOptionsBox();
+        setSortOption(option);
         sortTracks(option);
     }
 

@@ -1,8 +1,7 @@
 import { useGlobalState } from '../state/useGlobalState';
 import { MAX_NUM_OF_TRACKS } from '../utils/enums';
 import { getTracks } from './tracksApi';
-import compare from './compare'
-;
+import compare from './compare';
 let trackToAddAfterDelete = {};
 
 const Actions = () => {

@@ -6,11 +6,11 @@ export const trackCtn = {
 }
 
 export const trackImage = {
-    width: '80%'
+    width: '70%'
 }
 
 export const trackDetails = {
-    width: '80%',
+    width: '70%',
     textAlign: 'center',
     marginTop: '2%',
     color: '#cdcdcd'

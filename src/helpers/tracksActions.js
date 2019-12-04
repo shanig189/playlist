@@ -1,7 +1,9 @@
 import { useGlobalState } from '../state/useGlobalState';
 import { MAX_NUM_OF_TRACKS } from '../utils/enums';
 import { getTracks } from './tracksApi';
-import compare from './compare';
+import compare from './compare'
+;
+let trackToAddAfterDelete = {};
 
 const Actions = () => {
     const [tracks, setTracks] = useGlobalState('tracks');
@@ -9,7 +11,6 @@ const Actions = () => {
     const [sortOption, setSortOption] = useGlobalState('sortOption');
     let originTracks = localStorage.getItem('tracks') ? JSON.parse(localStorage.getItem('tracks')) : [];
     let updatedTracks = originTracks;
-    let trackToAddAfterDelete = {};
 
     const sortTracksByOption = (sortOption) => {
         const cloneTracks = updatedTracks.slice();
@@ -35,7 +36,6 @@ const Actions = () => {
                 albumName: album_name
             }
             if(updatedTracks.length === MAX_NUM_OF_TRACKS){
-                console.log("MAX_NUM_OF_TRACKS",MAX_NUM_OF_TRACKS)
                 trackToAddAfterDelete = track;
                 setIsShowModal(true);
             }else{

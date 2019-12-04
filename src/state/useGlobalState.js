@@ -4,7 +4,8 @@ const tracksFromLocalStorage = localStorage.getItem('tracks') ? JSON.parse(local
 const initialState = {
      tracks: tracksFromLocalStorage || [],
      isShowModal: false,
-     sortOption: 'Default' 
+     sortOption: 'Default',
+     chosenTrack: null 
     };
 const { GlobalStateProvider, useGlobalState } = createGlobalState(initialState);
 

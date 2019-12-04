@@ -1,19 +1,31 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useGlobalState } from '../../state/useGlobalState';
 import trackImg from '../../assets/images/trackImg.gif';
-import { trackCtn, trackImage, trackDetails } from './style';
+import { trackDetailsCtn, detail, lyricsCtn, lyrics } from './style';
 
 const TrackContent = () => {
-    let { trackId } = useParams();
+    const [chosenTrack, setChosenTrack] = useGlobalState('chosenTrack');
 
     return(
-        <div style={trackCtn}>
-            <img src={trackImg} alt="" style={trackImage}/>
-            <h1>{trackId}</h1>
-            {/* <span style={trackDetails}> 
-                {trackData.trackName} | {trackData.artistName}
-            </span> */}
-        </div>
+        chosenTrack && 
+        (<div style={trackDetailsCtn}>
+                <span style={detail}> 
+                    Track name: {chosenTrack.trackName}
+                </span>
+                <span style={detail}> 
+                    Artist name: {chosenTrack.artistName}
+                </span>
+                <span style={detail}> 
+                    Album name: {chosenTrack.albumName}
+                </span>
+                <div style={lyricsCtn}>
+                    <span style={detail}>Lyrics:</span> 
+                    <br/>
+                    <span style={lyrics}>
+                        {chosenTrack.trackLyrics}
+                    </span> 
+                </div>
+        </div>)
     )
 }
 

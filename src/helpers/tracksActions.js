@@ -1,6 +1,6 @@
 import { useGlobalState } from '../state/useGlobalState';
 import { MAX_NUM_OF_TRACKS } from '../utils/enums';
-import { getTracks } from './tracksApi';
+import { getTracksByName, getTrackLyrics } from './tracksApi';
 import compare from './compare';
 let trackToAddAfterDelete = {};
 
@@ -25,7 +25,7 @@ const Actions = () => {
 
     return { 
         addTrack: async (trackName, artistName) => {
-            const tracksList = await getTracks(trackName, artistName);
+            const tracksList = await getTracksByName(trackName, artistName);
             const randomTrack = tracksList[Math.floor(Math.random()*tracksList.length)];
             const { track_id, track_name, artist_name, album_name } = randomTrack.track;
             const track = {
@@ -57,7 +57,12 @@ const Actions = () => {
         },
         sortTracks: (sortOption) => {
             sortTracksByOption(sortOption);
-        }
+        },
+        getTrackLyrics: async (trackId) => {
+            const { lyrics_body} = await getTrackLyrics(trackId);
+            console.log('trackLyrics',lyrics_body)
+            return lyrics_body;
+        },
     }
 }
 

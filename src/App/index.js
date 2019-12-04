@@ -20,7 +20,7 @@ const App = () => {
               <Route exact path="/">
                 <Content />
               </Route>
-              <Route path="/track/:trackId">
+              <Route path="/track">
                 <TrackContent />
               </Route>
             </Switch>

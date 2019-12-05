@@ -7,7 +7,6 @@ import Track from '../track';
 
 const Tracks = () => {
     const [tracks, setTracks] = useGlobalState('tracks');
-    console.log("tracks", tracks)
 
     const getTracksList = tracks.map((track, index) =>
         <Track key={index} 

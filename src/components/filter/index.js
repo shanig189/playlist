@@ -6,8 +6,7 @@ import Actions from '../../helpers/tracksActions';
 
 const Filter = () => {
     const [sortOption, setSortOption] = useGlobalState('sortOption');
-    const filterOptionName = sortOption === 'Default' ?  'Filter by' : sortOption;
-    const [currentFilterOption, setCurrentFilterOption] = useState(filterOptionName);
+    const [currentFilterOption, setCurrentFilterOption] = useState(sortOption);
     const [isFilterOptionsBoxOpen, setIsFilterOptionsBoxOpen] = useState(false);
     const { sortTracks } = Actions();    
 
@@ -34,6 +33,7 @@ const Filter = () => {
 
     return(
         <div style={filterCtn}>
+            <span>Filter By:</span>
             <div style={filterBtn} className='filterBtn' onClick={toggleFilterOptionsBox}>
                 <span style={filterDefaultOption}>{currentFilterOption}</span>
             </div>

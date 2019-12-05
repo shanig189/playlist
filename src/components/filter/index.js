@@ -6,7 +6,8 @@ import Actions from '../../helpers/tracksActions';
 
 const Filter = () => {
     const [sortOption, setSortOption] = useGlobalState('sortOption');
-    const [currentFilterOption, setCurrentFilterOption] = useState('filter by');
+    const filterOptionName = sortOption === 'Default' ?  'Filter by' : sortOption;
+    const [currentFilterOption, setCurrentFilterOption] = useState(filterOptionName);
     const [isFilterOptionsBoxOpen, setIsFilterOptionsBoxOpen] = useState(false);
     const { sortTracks } = Actions();    
 

@@ -1,10 +1,12 @@
-import getInitialTracks from '../helpers/getInitialTracks';
 import { createGlobalState } from 'react-hooks-global-state';
+import getInitialParams from '../helpers/getInitialParams';
+
+const  { tracks, sortOption } = getInitialParams();
 
 const initialState = {
-     tracks: getInitialTracks(),
+     tracks,
+     sortOption,
      isShowModal: false,
-     sortOption: 'Default',
      chosenTrack: null 
     };
 const { GlobalStateProvider, useGlobalState } = createGlobalState(initialState);

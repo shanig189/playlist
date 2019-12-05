@@ -1,7 +1,7 @@
 import { useGlobalState } from '../state/useGlobalState';
 import { MAX_NUM_OF_TRACKS } from '../utils/enums';
 import { getTracksByName, getTrackLyrics } from './tracksApi';
-import compare from './compare';
+import sortTracksByOption from './sortTracksByOption';
 let trackToAddAfterDelete = {};
 
 const Actions = () => {
@@ -10,18 +10,6 @@ const Actions = () => {
     const [sortOption, setSortOption] = useGlobalState('sortOption');
     let originTracks = localStorage.getItem('tracks') ? JSON.parse(localStorage.getItem('tracks')) : [];
     let updatedTracks = originTracks;
-
-    const sortTracksByOption = (sortOption) => {
-        const cloneTracks = updatedTracks.slice();
-    
-        switch(sortOption){
-            case 'Track name': cloneTracks.sort(compare.bind(null, 'trackName')); break;
-            case 'Artist name': cloneTracks.sort(compare.bind(null, 'artistName')); break;
-            default: break;
-        }
-
-        setTracks(cloneTracks);
-    }
 
     return { 
         addTrack: async (trackName, artistName) => {
@@ -50,17 +38,20 @@ const Actions = () => {
             localStorage.setItem('tracks', JSON.stringify(updatedTracks));
             
             if(sortOption !== 'Default'){
-                sortTracksByOption(sortOption);
-            }else{
-                setTracks(updatedTracks);
+                updatedTracks = sortTracksByOption(updatedTracks, sortOption);
             }
+            
+            setTracks(updatedTracks);
         },
         sortTracks: (sortOption) => {
-            sortTracksByOption(sortOption);
+            localStorage.setItem('tracksSortOption', sortOption);
+            const sortedTracks = sortTracksByOption(updatedTracks, sortOption);
+
+            setTracks(sortedTracks);
         },
         getTrackLyrics: async (trackId) => {
-            const { lyrics_body} = await getTrackLyrics(trackId);
-            console.log('trackLyrics',lyrics_body)
+            const { lyrics_body } = await getTrackLyrics(trackId);
+
             return lyrics_body;
         },
     }

@@ -1,8 +1,8 @@
+import getInitialTracks from '../helpers/getInitialTracks';
 import { createGlobalState } from 'react-hooks-global-state';
 
-const tracksFromLocalStorage = localStorage.getItem('tracks') ? JSON.parse(localStorage.getItem('tracks')) : null;
 const initialState = {
-     tracks: tracksFromLocalStorage || [],
+     tracks: getInitialTracks(),
      isShowModal: false,
      sortOption: 'Default',
      chosenTrack: null 

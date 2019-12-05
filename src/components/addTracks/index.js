@@ -27,14 +27,15 @@ const AddTracks = () => {
                    type='text' 
                    placeholder='Track name' 
                    onChange={handleSetTrackName} 
-                   className={isTrackNameEmptyOnAddTrackClick ? "addTrackInput" : ""}
+                   className={isTrackNameEmptyOnAddTrackClick ? 'addTrackInput addTrackInputAlert' : 'addTrackInput'}
             />
             <input style={addTrackInput} 
                    type='text' 
                    placeholder='Artist name (optional)' 
-                   onChange={event => setArtistName(event.target.value)} 
+                   onChange={event => setArtistName(event.target.value)}
+                   className='addTrackInput' 
             />
-            <button style={addTrackBtn} onClick={handleAddTrackClick}>
+            <button style={addTrackBtn} onClick={handleAddTrackClick} className='addTrackBtn'>
                 <span>Add a track</span>
             </button>
         </div>

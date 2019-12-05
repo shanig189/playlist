@@ -37,7 +37,7 @@ body {
     color: #2e9e7a;
 }
 
-.addTrackInput{
+.addTrackInputAlert{
     border-color: red !important;
 }
 
@@ -76,3 +76,89 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+
+@media only screen and (max-width: 1200px) {
+    .addTrackInput {
+        width: 20% !important;
+        margin-top: 2% !important;
+    }
+    .addTrackBtn{
+        width: 16% !important;
+        margin-top: 2% !important;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .addTrackInput {
+        width: 22% !important;
+    }
+    .addTrackBtn{
+        width: 19% !important;
+    }
+    .trackCtn{
+        width: 24% !important;
+        margin-bottom: 1% !important;
+    }
+    .tracksListCtn{
+        margin: 0 16% 5% 16% !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .addTrackInput {
+        width: 23% !important;
+        height: 41px !important;
+        font-size: 13px !important;
+    }
+    .addTrackBtn{
+        width: 19% !important;
+        height: 45px !important;
+        font-size: 12px !important;
+    }
+    .filterBtn{
+        height: 35px !important;
+        font-size: 13.5px !important;
+    }
+    .filterByTxt{
+        font-size: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .addTrackInput {
+        width: 50% !important;
+        padding: 0px 5% !important;        
+    }
+    .addTrackBtn{
+        width: 61% !important;      
+        font-size: 13px !important;
+    }
+    .trackCtn{
+        width: 45% !important;
+    }
+    .tracksListCtn{
+        margin: 0 20% 5% 20% !important;
+    }
+    .trackDetails{
+        font-size: 15px !important;
+    }
+    .filterBtn{
+        padding: 0px 3% !important;
+    }
+    .filterOptionsCtn{
+        padding: 1% 3.2% !important;
+    }
+    .filterCtn{
+        margin: 5% 1% 4% 31% !important;
+    }
+    .logo{
+        width: 24% !important;
+    }
+    .titleCtn{
+        margin-top: 15px !important;
+    }
+    .title{
+        margin: 1% 1% 1% 22% !important;
+        font-size: 26px !important;
+    }
+}

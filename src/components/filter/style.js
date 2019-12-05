@@ -1,12 +1,12 @@
 export const filterCtn = {
     width: '100%',
-    margin: '1% 1% 1% 31%'
+    margin: '3% 1% 2% 31%'
 }
 
 const filter = {
     position: 'absolute',
     borderRadius: '18px',
-    width: '7%',
+    width: '100px',
 }
 
 export const filterBtn = {
@@ -21,6 +21,11 @@ export const filterBtn = {
     background: 'rgba(255,255,255,0.14)',
     cursor: 'pointer',
     height: '40px',
+}
+
+export const filterByTxt = {
+    color: 'white',
+    margin: '1%',
 }
 
 export const filterDefaultOption = {

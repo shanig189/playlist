@@ -17,13 +17,11 @@ const Tracks = () => {
     return(
         <div>
             <AddTracks />
-            <div style={{marginTop: '5%'}}> 
             {
                 tracks.length > 1 &&
                 (<Filter />) 
             }
-            </div>
-            <div style={tracksListCtn}>
+            <div style={tracksListCtn} className='tracksListCtn'>
                 {getTracksList}
             </div>
         </div>

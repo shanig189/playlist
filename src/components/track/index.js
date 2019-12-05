@@ -18,9 +18,9 @@ const Track = ({ trackData }) => {
     }
     
     return(
-        <div style={trackCtn} onClick={() => handleClick()}>
+        <div style={trackCtn} onClick={() => handleClick()} className='trackCtn'>
             <img src={trackImg} alt="" style={trackImage}/>
-            <span style={trackDetails}> 
+            <span style={trackDetails} className='trackDetails'> 
                 {trackData.trackName} | {trackData.artistName}
             </span>
         </div>

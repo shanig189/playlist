@@ -4,8 +4,8 @@ import headphoneImg from '../../assets/images/headphone.png';
 
 const Title = () => {
     return(
-        <div style={titleCtn}>
-            <h1 style={title}>
+        <div style={titleCtn} className='titleCtn'>
+            <h1 style={title} className='title'>
                 your 
                 <span style={innerTitle}>
                     playlist.

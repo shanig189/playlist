@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useGlobalState } from '../../state/useGlobalState';
-import { filterCtn, filterTitle, filterBtn, filterDefaultOption, filterOptionsCtn, filterOption } from './style.js';
+import { filterCtn, filterTitle, filterBtn, filterByTxt, filterDefaultOption, filterOptionsCtn, filterOption } from './style.js';
 import { filterOptions } from '../../utils/enums';
 import Actions from '../../helpers/tracksActions';
 
@@ -32,14 +32,14 @@ const Filter = () => {
     );
 
     return(
-        <div style={filterCtn}>
-            <span>Filter By:</span>
+        <div style={filterCtn} className='filterCtn'>
+            <span style={filterByTxt} className='filterByTxt'>Filter By:</span>
             <div style={filterBtn} className='filterBtn' onClick={toggleFilterOptionsBox}>
                 <span style={filterDefaultOption}>{currentFilterOption}</span>
             </div>
             {
                 isFilterOptionsBoxOpen && 
-                (<ul style={filterOptionsCtn}>
+                (<ul style={filterOptionsCtn} className='filterOptionsCtn'>
                     {getFilterOptions}
                 </ul>)
             }

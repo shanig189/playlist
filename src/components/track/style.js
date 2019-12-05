@@ -2,7 +2,8 @@ export const trackCtn = {
     display: 'flex',
     flexFlow: 'column',
     width: '20%',
-    marginTop: '1%'
+    marginTop: '1%',
+    cursor: 'pointer'
 }
 
 export const trackImage = {

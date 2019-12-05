@@ -1,6 +1,7 @@
 export const addTrackCtn = {
     textAlign: 'center',
-    margin: '1% auto'
+    margin: '1% auto',
+    width: '100%'
 }
 
 const button = {

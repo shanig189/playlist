@@ -6,7 +6,7 @@ const  { tracks, sortOption } = getInitialParams();
 const initialState = {
      tracks,
      sortOption,
-     isShowModal: false,
+     isShowModal: true,
      chosenTrack: null 
     };
 const { GlobalStateProvider, useGlobalState } = createGlobalState(initialState);

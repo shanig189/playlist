@@ -1,31 +1,20 @@
-export const titleCtn = {
-    display: 'flex',
-    flexFlow: 'row',
-    position: 'relative',
-    textAlign: 'center',
-    width: '100%',
+export const container = {
+    borderBottom: '1px solid lightgray'
 }
 
-export const title = {
-    margin: '1%',
-    marginLeft: '30%',
-    fontSize: '5vw',
-    fontWeight: '500',
-    color: 'white',
-    textTransform: 'uppercase',
-    fontFamily: '"Josefin Sans", sans-serif'
+export const buttonsCtn = {
+    marginTop: '3%',
+    textAlign: 'right'
 }
 
-export const innerTitle = {
-    color: '#eeff2d',
-    marginLeft: '1%'
+export const okBtn = {
+    color: '#fff',
+    backgroundColor: '#007bff',
+    borderColor: '#007bff',
 }
 
-export const headphoneCtn = {
-    marginTop: '-2%',
-    width: '5%'
-}
-
-export const headphone = {
-    width: '100%',
+export const cancelBtn = {
+    color: '#fff',
+    backgroundColor: '#868e96',
+    borderColor: '#868e96',
 }

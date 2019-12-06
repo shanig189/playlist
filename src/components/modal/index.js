@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useGlobalState } from '../../state/useGlobalState';
+import { container, buttonsCtn, okBtn, cancelBtn } from './style';
 import Actions from '../../helpers/tracksActions';
 
 const Modal = () => {
@@ -20,11 +21,15 @@ const Modal = () => {
        (<div id="myModal" className="modal">
             <div className="modal-content">
                 <span className="close" onClick={handleClose}>&times;</span>
-                <h2>WARNING</h2>
-                <p>The oldest song is going to be deleted.</p>
-                <div>
-                    <button onClick={handleOk}>Ok</button>
-                    <button onClick={handleClose}>Cancel</button>
+                <div style={container}>
+                    <h2>WARNING</h2>
+                </div>
+                <div style={container}>
+                    <p>The oldest song is going to be deleted.</p>
+                </div>
+                <div style={buttonsCtn}>
+                    <button onClick={handleOk} style={okBtn} className='btn'>Ok</button>
+                    <button onClick={handleClose} style={cancelBtn} className='btn'>Cancel</button>
                 </div>
             </div>
         </div>)

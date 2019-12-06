@@ -4,6 +4,7 @@ export const titleCtn = {
     position: 'relative',
     textAlign: 'center',
     width: '100%',
+    marginTop: '5%'
 }
 
 export const title = {

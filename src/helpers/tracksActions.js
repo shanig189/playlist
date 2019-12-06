@@ -9,7 +9,6 @@ const Actions = () => {
     const [isShowModal, setIsShowModal] = useGlobalState('isShowModal');
     const [sortOption, setSortOption] = useGlobalState('sortOption');
     let originTracks = localStorage.getItem('tracks') ? JSON.parse(localStorage.getItem('tracks')) : [];
-    let updatedTracks = originTracks;
 
     return { 
         addTrack: async (trackName, artistName) => {
@@ -22,21 +21,23 @@ const Actions = () => {
                 artistName: artist_name,
                 albumName: album_name
             }
-            if(updatedTracks.length === MAX_NUM_OF_TRACKS){
+            if(originTracks.length === MAX_NUM_OF_TRACKS){
                 trackToAddAfterDelete = track;
                 setIsShowModal(true);
             }else{
-                updatedTracks = originTracks = [...tracks, track];
-                localStorage.setItem('tracks', JSON.stringify(updatedTracks));
-                setTracks(updatedTracks);
+                originTracks.unshift(track);
+                localStorage.setItem('tracks', JSON.stringify(originTracks));
+                setTracks(originTracks);
             }
 
         },
         deleteTrack: () => {
-            updatedTracks.shift();
-            updatedTracks.push(trackToAddAfterDelete);
-            localStorage.setItem('tracks', JSON.stringify(updatedTracks));
+            originTracks.pop();
+            originTracks.unshift(trackToAddAfterDelete);
+            localStorage.setItem('tracks', JSON.stringify(originTracks));
             
+            let updatedTracks = originTracks;
+
             if(sortOption !== 'Default'){
                 updatedTracks = sortTracksByOption(updatedTracks, sortOption);
             }
@@ -45,7 +46,7 @@ const Actions = () => {
         },
         sortTracks: (sortOption) => {
             localStorage.setItem('tracksSortOption', sortOption);
-            const sortedTracks = sortTracksByOption(updatedTracks, sortOption);
+            const sortedTracks = sortTracksByOption(originTracks, sortOption);
 
             setTracks(sortedTracks);
         },

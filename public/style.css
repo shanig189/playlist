@@ -122,6 +122,16 @@ body {
     .filterByTxt{
         font-size: 15px !important;
     }
+    .trackDetails{
+        font-size: 15px !important;
+    }
+    .title{
+        margin: 1% 1% 1% 25% !important;
+        font-size: 6vw !important;
+    }
+    .logo{
+        width: 20% !important;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -154,11 +164,8 @@ body {
     .logo{
         width: 24% !important;
     }
-    .titleCtn{
-        margin-top: 15px !important;
-    }
     .title{
         margin: 1% 1% 1% 22% !important;
-        font-size: 26px !important;
+        font-size: 7vw !important;
     }
 }

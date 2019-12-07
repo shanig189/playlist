@@ -24,6 +24,7 @@ const Tracks = () => {
             <div style={tracksListCtn} className='tracksListCtn'>
                 {getTracksList}
             </div>
+            <div id="tracksLength" style={{display: 'none'}}>{tracks.length}</div>
         </div>
     )
 }

@@ -51,32 +51,53 @@ body {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .3rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+    width: 100px;
+    margin-right: 1%;
+}
 
+/* responsive */
 @media only screen and (max-width: 1200px) {
     .addTrackInput {
         width: 20% !important;
@@ -132,27 +153,16 @@ body {
     .logo{
         width: 20% !important;
     }
-}
-
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .3rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    cursor: pointer;
-    width: 100px;
-    margin-right: 1%;
+    .btn{
+        width: 80px !important;
+        padding: .2rem .75rem !important;
+    }
+    .modal-content {
+        width: 65% !important;
+    }
+    .trackNotFoundCtn{
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -188,5 +198,12 @@ body {
     .title{
         margin: 1% 1% 1% 22% !important;
         font-size: 7vw !important;
+    }
+    .modal-content {
+        width: 75% !important;
+    }
+    .trackNotFoundCtn{
+        font-size: 14px;
+        margin-top: 3%;
     }
 }

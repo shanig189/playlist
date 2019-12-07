@@ -21,9 +21,14 @@ const TrackContent = () => {
                 <div style={lyricsCtn}>
                     <span style={detail}>Lyrics:</span> 
                     <br/>
-                    <span style={lyrics}>
-                        {chosenTrack.trackLyrics}
-                    </span> 
+                    <div style={lyrics}>
+                    {
+                        chosenTrack.trackLyrics !=='' ?
+                        <span>{chosenTrack.trackLyrics}</span>
+                        :
+                        <span>No lyrics found.</span>
+                    }
+                    </div> 
                 </div>
         </div>)
     )

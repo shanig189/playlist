@@ -16,20 +16,31 @@ const getTracks = async (params) => {
 }
 
 export const getTracksByName = async (trackName, artistName) => {
-    let params = `track.search?q_track=${trackName}`;
-
-    if(artistName){
-        params += `&q_artist=${artistName}`;
+    try{
+        let params = `track.search?q_track=${trackName}`;
+        
+        if(artistName){
+            params += `&q_artist=${artistName}`;
+        }
+    
+        const { track_list } = await getTracks(params);
+        
+        return track_list;
+    }catch(err){
+        return [];
     }
 
-    const { track_list } = await getTracks(params);
-    
-    return track_list;
 }
 
 export const getTrackLyrics = async (trackId) => {
-    const params = `track.lyrics.get?track_id=${trackId}`;
-    const { lyrics } = await getTracks(params);
-    
-    return lyrics;
+    try{
+        const params = `track.lyrics.get?track_id=${trackId}`;
+        const { lyrics } = await getTracks(params);
+        const { lyrics_body } = lyrics;
+
+        return lyrics_body;
+    }catch(err){
+        return '';
+    }
+
 }

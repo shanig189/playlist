@@ -1,6 +1,6 @@
 export const filterCtn = {
     width: '100%',
-    margin: '3% 1% 2% 31%'
+    margin: '5% 1% 2% 31%'
 }
 
 const filter = {

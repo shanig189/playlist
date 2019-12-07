@@ -1,7 +1,15 @@
 export const addTrackCtn = {
-    textAlign: 'center',
+    display: 'flex',
+    flexFlow: 'column',
     margin: '1% auto',
-    width: '100%'
+    width: '100%',
+    textAlign: 'center',
+}
+
+export const trackNotFoundCtn = {
+    color: 'white',
+    marginTop: '2%',
+    fontSize: '20px'
 }
 
 const button = {

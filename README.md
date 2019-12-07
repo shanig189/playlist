@@ -1,7 +1,6 @@
-## To run the project:
+# To run the project:
+### npm install
+### npm start
 
-# Run: npm install
-# Run: npm start
-
-## To run the tests:
-# Run: npm test
+# To run the tests:
+### npm test

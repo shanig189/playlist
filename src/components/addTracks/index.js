@@ -7,13 +7,13 @@ const AddTracks = () => {
     const [trackName, setTrackName] = useState('');
     const [artistName, setArtistName] = useState('');
     const [isTrackNameEmptyOnAddTrackClick, setIsTrackNameEmptyOnAddTrackClick] = useState(false);
-    // const [isShowTrackNotFoundMsg, setIsShowTrackNotFoundMsg] = useGlobalState('isShowTrackNotFoundMsg');
+    const [isShowTrackNotFoundMsg, setIsShowTrackNotFoundMsg] = useGlobalState('isShowTrackNotFoundMsg');
     const { addTrack } = Actions();
 
     const handleSetTrackName = (event) => {
         setTrackName(event.target.value);
         setIsTrackNameEmptyOnAddTrackClick(false);
-        // setIsShowTrackNotFoundMsg(false);
+        setIsShowTrackNotFoundMsg(false);
     }
 
     const handleAddTrackClick = () => {
@@ -43,12 +43,12 @@ const AddTracks = () => {
                     <span>Add a track</span>
                 </button>
             </div>
-            {/* {
+            {
                 isShowTrackNotFoundMsg &&
                 (<div style={trackNotFoundCtn} className='trackNotFoundCtn'>
                     Track Not Found.
                 </div>)
-            } */}
+            }
         </div>
     )
 }
